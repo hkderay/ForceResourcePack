@@ -21,7 +21,10 @@ public class PlayerJoin implements Listener {
     public void listen(PlayerJoinEvent e){
         Player p = e.getPlayer();
         if(!ForceResourcePack.getConfigUtils().getBoolean("join-enabled"))return;
-        if(p.hasPermission("frp.bypass"))return;
+        if(p.hasPermission("frp.bypass")){
+            p.sendMessage("§cYou have bypass the request !");
+            return;
+        }
         /*Send the resource pack*/
         ForceResourcePack.getPlayers2().put(p, System.currentTimeMillis());
         ForceResourcePack.launchTask();

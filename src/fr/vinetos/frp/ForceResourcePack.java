@@ -22,8 +22,8 @@ public class ForceResourcePack extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        if(!Bukkit.getVersion().contains("1.8")){
-            System.out.println("[ForceResourcePack] The plugin work only on a 1.8.X version.");
+        if(!Bukkit.getVersion().contains("1.8") && !Bukkit.getVersion().contains("1.9") ){
+            System.out.println("[ForceResourcePack] The plugin work only on a 1.8.X-1.9.x version.");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
